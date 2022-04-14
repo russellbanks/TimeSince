@@ -13,21 +13,22 @@ import libui.ktx.vbox
 import libui.uiDrawTextAlignCenter
 
 fun main() = appWindow(
-    title = "Title️",
+    title = "TimeSince",
     width = 320,
     height = 240
 ) {
     vbox {
         val area = drawarea {
             draw {
-                val date = Instant.fromEpochSeconds(1609818594).periodUntil(Clock.System.now(), TimeZone.currentSystemDefault())
-                val yearString = if (date.years == 1) "year" else "years"
-                val monthString = if (date.months == 1) "month" else "months"
-                val dayString = if (date.days == 1) "day" else "days"
-                val hourString = if(date.hours == 1) "hour" else "hours"
-                val minuteString = if (date.minutes == 1) "minute" else "minutes"
-                val secondString = if (date.seconds == 1) "second" else "seconds"
-                val dateString = string("${date.years} $yearString, ${date.months} $monthString, ${date.days} $dayString, ${date.hours} $hourString, ${date.minutes} $minuteString and ${date.seconds} $secondString.️")
+                val originalDate = Instant.fromEpochSeconds(0)
+                val timeSince = originalDate.periodUntil(Clock.System.now(), TimeZone.currentSystemDefault())
+                val yearString = if (timeSince.years == 1) "year" else "years"
+                val monthString = if (timeSince.months == 1) "month" else "months"
+                val dayString = if (timeSince.days == 1) "day" else "days"
+                val hourString = if(timeSince.hours == 1) "hour" else "hours"
+                val minuteString = if (timeSince.minutes == 1) "minute" else "minutes"
+                val secondString = if (timeSince.seconds == 1) "second" else "seconds"
+                val dateString = string("It has been ${timeSince.years} $yearString, ${timeSince.months} $monthString, ${timeSince.days} $dayString, ${timeSince.hours} $hourString, ${timeSince.minutes} $minuteString and ${timeSince.seconds} $secondString since $originalDate")
                 text(dateString, font("Helvetica", 16.0), it.AreaWidth, uiDrawTextAlignCenter, 0.0, 0.0)
             }
             stretchy = true
