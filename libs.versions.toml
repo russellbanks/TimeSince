@@ -1,0 +1,7 @@
+[versions]
+libui = "0.1.8"
+kotlinx-datetime = "0.3.2"
+
+[libraries]
+libui = { module = "com.github.msink:libui", version.ref = "libui" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }

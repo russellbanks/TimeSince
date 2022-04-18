@@ -26,9 +26,11 @@ kotlin {
     }
     val libuiMain by sourceSets.getting {
         dependencies {
-            implementation("com.github.msink:libui:0.1.8")
+            // Kotlin LibUI - https://github.com/msink/kotlin-libui
+            implementation(libs.libui)
 
-            implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.3.2")
+            // Kotlinx DateTime - https://github.com/Kotlin/kotlinx-datetime
+            implementation(libs.kotlinx.datetime)
         }
     }
 }
