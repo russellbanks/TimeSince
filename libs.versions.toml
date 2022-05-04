@@ -1,6 +1,6 @@
 [versions]
 libui = "0.1.8"
-kotlinx-datetime = "0.3.2"
+kotlinx-datetime = "0.3.3"
 
 [libraries]
 libui = { module = "com.github.msink:libui", version.ref = "libui" }
