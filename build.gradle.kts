@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform") version "1.6.21"
+    kotlin("multiplatform") version "1.8.21"
 }
 
 group = "com.russellbanks"
